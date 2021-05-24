@@ -3,8 +3,9 @@ import sys
 # Values of the KLM operators from the literature:
 # Kieras, D. (2001). Using the keystroke-level model to estimate execution times. University of Michigan, 555.
 # Card, S. K., Moran, T. P., & Newell, A. (1980). The keystroke-level model for user performance time with interactive systems. Communications of the ACM, 23(7), 396-410.
+# Used Keystroke-time for average skilled typist.
 my_klm_dict = {"k": 248.7, "p": 452.2, "h": 994.3, "m": 2657.6, "b": 100, "d": 0}
-literature_klm_dict = {"k": 280, "p": 1100, "h": 400, "m": 1200, "b": 100, "d": 0}
+literature_klm_dict = {"k": 200, "p": 1100, "h": 400, "m": 1200, "b": 100, "d": 0}
 
 operators = "kphmbd"
 numbers = "1234567890"
