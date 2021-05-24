@@ -55,7 +55,7 @@ class KLMPredictor:
                 elif char in operators:
                     multiplier = self.get_multiplier(current_number_modifiers)
                     predicted_time_our_model += multiplier * my_klm_dict.get(char)
-                    predicted_time_our_model += multiplier * literature_klm_dict.get(char)
+                    predicted_time_literature_model += multiplier * literature_klm_dict.get(char)
                     current_number_modifiers.clear()
 
         print("Predicted time (our model): " + str(predicted_time_our_model) + " ms")
