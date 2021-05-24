@@ -1,7 +1,8 @@
 import sys
 
+# Values of the KLM operators from the literature: Kieras, D. (2001). Using the keystroke-level model to estimate execution times. University of Michigan, 555.
 my_klm_dict = {"k": 248.7, "p": 452.2, "h": 994.3, "m": 2657.6, "b": 100, "d": 0}
-literature_klm_dict = {"k": 0, "p": 0, "h": 0, "m": 0, "b": 0, "d": 0}  # TODO insert values from literature
+literature_klm_dict = {"k": 0.28, "p": 1.1, "h": 0.4, "m": 1.2, "b": 0.1, "d": 0}  # TODO d Operator?
 
 operators = "kphmbd"
 numbers = "1234567890"
