@@ -29,16 +29,35 @@ class Logger:
     def __init__(self):
         super().__init__()
         self.init_dataframe()
+        self.experiment_running = False
 
     def init_dataframe(self):
         self.df = pd.DataFrame(columns=CSV_HEADER)
 
     def add_log_entry(self, user_input, input_type):
-        self.df = self.df.append({
-            'timestamp': datetime.now(),
-            'key': user_input,
-            'input_type': input_type.name
-        }, ignore_index=True)
+
+        if not self.experiment_running:
+            self.experiment_running = True
+            self.df = self.df.append({
+                'timestamp': datetime.now(),
+                'key': "EXPERIMENT_START",
+                'input_type': input_type.name
+            }, ignore_index=True)
+
+        if user_input == CLEAR:
+            self.experiment_running = False
+            self.df = self.df.append({
+                'timestamp': datetime.now(),
+                'key': "EXPERIMENT_END",
+                'input_type': input_type.name
+            }, ignore_index=True)
+
+        else:
+            self.df = self.df.append({
+                'timestamp': datetime.now(),
+                'key': user_input,
+                'input_type': input_type.name
+            }, ignore_index=True)
 
     def print_logs(self):
         self.df.to_csv(sys.stdout, index=False)
