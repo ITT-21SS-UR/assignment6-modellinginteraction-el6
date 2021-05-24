@@ -1,0 +1,11 @@
+6.1: Read up on KLM
+a) What does the term „critical path” describe with regard to GOMS?
+An extension of the GOMS method is the CPM-GOMS method. Here the individual operators are differentiated into Cognition, Perception and Motor. 
+To make temporal and especially parallel processes visible with the CPM-GOMS method, it is possible to create a schedule chart. Here, the individual activities are represented by boxes, placed in a sequence and dependencies are clarified by lines. In addition, it is possible that several activities are carried out at the same time, which are not dependent on each other.
+To determine the total duration of the task, the so-called "critical path" from project management can be used. This determines the duration of the longest path of interdependent activities, which in turn is equivalent to an estimate of the total duration of the task. 
+
+b) Why might the original KLM not perfectly model input performance on a laptop? How could it be adapted?
+For the KLM method, Card, Moran & Newell (1983) determined the duration of standard operators using experiments. By Kieras (2001) these are presented collected and extended by mental operators.
+However, for newer possibilities of human-machine interaction, these values have to be determined in some cases. In the case of laptops, for example, input via touchpad or (although more rarely) a trackpoint is added, which supplement or even replace a computer mouse. 
+The duration for operator H (home hands to keyboard or mouse) would have to be redetermined for the movement between hand and touchpad. The mouse operators (P, B, BB) would also have to be redefined for the touchpad. 
+It should also be noted that the touchpad provides two buttons (synonymous with the left and right mouse buttons) at the bottom of the pad for the B and BB operators. In addition, it is also possible that pressing the left button on the touchpad can be replaced with a tap on the touchpad. An experimental study would therefore have to determine whether these two possibilities result in different times.
