@@ -25,6 +25,7 @@ class InputType(Enum):
 class Logger:
 
     df = ()
+    last_timestamp = None
 
     def __init__(self):
         super().__init__()
@@ -36,18 +37,20 @@ class Logger:
 
     def add_log_entry(self, user_input, input_type):
 
+        timestamp = datetime.now()
+
         if not self.experiment_running:
             self.experiment_running = True
             self.df = self.df.append({
-                'timestamp': datetime.now(),
+                'timestamp': timestamp,
                 'key': "EXPERIMENT_START",
                 'input_type': input_type.name
             }, ignore_index=True)
 
-        if user_input == CLEAR:
+        if user_input == CLEAR and self.last_timestamp is not None:
             self.experiment_running = False
             self.df = self.df.append({
-                'timestamp': datetime.now(),
+                'timestamp': self.last_timestamp,
                 'key': "EXPERIMENT_END",
                 'input_type': input_type.name
             }, ignore_index=True)
@@ -58,6 +61,8 @@ class Logger:
                 'key': user_input,
                 'input_type': input_type.name
             }, ignore_index=True)
+
+        self.last_timestamp = timestamp
 
     def print_logs(self):
         self.df.to_csv(sys.stdout, index=False)
