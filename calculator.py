@@ -57,7 +57,7 @@ class Logger:
 
         else:
             self.df = self.df.append({
-                'timestamp': datetime.now(),
+                'timestamp': timestamp,
                 'key': user_input,
                 'input_type': input_type.name
             }, ignore_index=True)
